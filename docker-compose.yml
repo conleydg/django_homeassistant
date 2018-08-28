@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: >
+      bash -c "pip install pipenv
+      && pipenv install --deploy --system
+      && python3 manage.py makemigrations --no-input
+      && python3 manage.py migrate
+      && python3 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  web_2:
+    build: .
+    command: >
+      bash -c "pip install pipenv
+      && pipenv install --deploy --system
+      && python3 async.py"
+    volumes:
+      - .:/code
+    ports:
+      - "8100:8000"
+    depends_on:
+      - web
