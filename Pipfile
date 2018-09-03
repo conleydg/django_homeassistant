@@ -11,6 +11,7 @@ requests = "*"
 "psycopg2-binary" = "*"
 coverage = "*"
 pandas = "*"
+"flake8" = "*"
 
 [dev-packages]
 pylint = "*"

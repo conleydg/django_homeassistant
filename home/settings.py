@@ -21,7 +21,6 @@ HOME_ASSISTANT_WS_URL = 'ws://192.168.1.62:8123/api/websocket'
 HOME_ASSISTANT_HEADERS = {'content-type': 'application/json'}
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 

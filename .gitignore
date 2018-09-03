@@ -1,3 +1,5 @@
 secrets.py
 .idea/
 .coverage
+__pycache__/
+htmlcov/
